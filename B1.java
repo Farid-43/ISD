@@ -6,7 +6,7 @@ interface CourseComponent {
 // Lesson class
 class Lesson implements CourseComponent {
     private String title;
-    private int duration;       // in minutes
+    private int duration; // in minutes
     private String instructorName;
 
     public Lesson(String title, int duration, String instructorName) {
@@ -66,3 +66,36 @@ public class B1 {
         l2.showDetails();
     }
 }
+
+// main
+// class Lesson implements CourseComponent {
+// private String title;
+// private int duration; // <--- added in main branch
+
+// public Lesson(String title, int duration) {
+// this.title = title;
+// this.duration = duration;
+// }
+
+// @Override
+// public void showDetails() {
+// System.out.println("Lesson: " + title + " | Duration: " + duration + "
+// mins");
+// }
+// }
+
+// feature
+// class Lesson implements CourseComponent {
+// private String title;
+// private String instructorName; // <--- added in feature branch
+
+// public Lesson(String title, String instructorName) {
+// this.title = title;
+// this.instructorName = instructorName;
+// }
+
+// @Override
+// public void showDetails() {
+// System.out.println("Lesson: " + title + " | Instructor: " + instructorName);
+// }
+// }
