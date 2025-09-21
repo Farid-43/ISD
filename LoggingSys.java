@@ -1,17 +1,19 @@
-// Enum for Log Levels
-enum LogLevel {
-    INFO, DEBUG, ERROR
+// LogLevel class with constants
+class LogLevel {
+    public static final String INFO = "INFO";
+    public static final String DEBUG = "DEBUG";
+    public static final String ERROR = "ERROR";
 }
 
 // Logger Interface (Strategy)
 interface Logger {
-    void log(LogLevel level, String message);
+    void log(String level, String message);
 }
 
 // Console Logger
 class ConsoleLogger implements Logger {
     @Override
-    public void log(LogLevel level, String message) {
+    public void log(String level, String message) {
         System.out.println("[" + level + "] " + message);
     }
 }
@@ -19,7 +21,7 @@ class ConsoleLogger implements Logger {
 // File Logger (simple simulation)
 class FileLogger implements Logger {
     @Override
-    public void log(LogLevel level, String message) {
+    public void log(String level, String message) {
         System.out.println("Writing to File -> [" + level + "] " + message);
     }
 }
@@ -27,7 +29,7 @@ class FileLogger implements Logger {
 // Database Logger (simulation)
 class DatabaseLogger implements Logger {
     @Override
-    public void log(LogLevel level, String message) {
+    public void log(String level, String message) {
         System.out.println("Inserting into DB -> [" + level + "] " + message);
     }
 }
@@ -66,7 +68,7 @@ class LoggingSystem {
     }
 
     // Log messages
-    public void log(LogLevel level, String message) {
+    public void log(String level, String message) {
         logger.log(level, message);
     }
 }

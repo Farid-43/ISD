@@ -5,12 +5,14 @@ interface Notification {
 
 // Step 2: Concrete Classes
 class EmailNotification implements Notification {
+    @Override
     public void notifyUser() {
         System.out.println("Sending Email Notification: Your borrowed book is due soon!");
     }
 }
 
 class SMSNotification implements Notification {
+    @Override
     public void notifyUser() {
         System.out.println("Sending SMS Notification: Your borrowed book is due soon!");
     }
